@@ -7,7 +7,8 @@
 		<li><%=activities.task%></li>
 	<%end%>
 </ol>
-<form method ="POST" action="activities">
-<input type="text" name="task">
-<button>Add</button>
-</form>
+<%= form_for :Activity do |f| %>
+  Task: <%= f.text_field :task %><br />
+  
+  <%= f.submit :Add%>
+<% end %>
