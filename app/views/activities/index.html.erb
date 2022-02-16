@@ -1,14 +1,20 @@
 <h1>To do List</h1>
 <p>Things you need to do</p>
-
-<ol>
-	<%@activities.each do |activities|%>
+	<ol>
+		<%@activities.each do |activities|%>
+		<li>
+		<tr>
+			<td><%=activities.task%></td>
+			<td> <%= link_to "Delete", activities, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+		</tr>
+		</li>
+		<%end%>
+	</ol>
 	
-		<li><%=activities.task%></li>
-	<%end%>
-</ol>
 <%= form_for :Activity do |f| %>
   Task: <%= f.text_field :task %><br />
-  
   <%= f.submit :Add%>
 <% end %>

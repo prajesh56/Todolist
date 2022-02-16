@@ -3,6 +3,11 @@ class ActivitiesController < ApplicationController
     #binding.pry
     @activities =Activity.all
   end
+
+  def show
+    @activities = Activity.find(params[:id])
+  end
+
   def new
     @activities = Activity.new
   end
@@ -10,10 +15,17 @@ class ActivitiesController < ApplicationController
   def create
     @activities = Activity.new(activity_params)
     if @activities.save
-      redirect_to @activities
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  
+  def destroy
+    activities = Activity.find(params[:id])
+    activities.destroy
+    redirect_to root_path
   end
   
   private
