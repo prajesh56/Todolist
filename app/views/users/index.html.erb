@@ -9,6 +9,9 @@
 		<tr>
 			<td><%=users.name%></td>
 			<td><%=users.address%></td>
+			<td> 
+				<%= link_to "Edit", edit_user_path(users)%>
+			</td>
 		</tr>
 	<%end%>
 </table>
