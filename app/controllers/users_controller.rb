@@ -30,6 +30,13 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def destroy
+    users = User.find(params[:id])
+    users.destroy
+    redirect_to users_path
+  end
+
   private
     def user_params
       params.require(:user).permit(:name,:address)
