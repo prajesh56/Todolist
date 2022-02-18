@@ -3,7 +3,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
     create_table :activities do |t|
       
       t.string :task
-      t.timestamps
+      t.timestamps 
     end
   end
 end

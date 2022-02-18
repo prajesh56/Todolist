@@ -5,16 +5,18 @@
 		<li>
 		<tr>
 			<td><%=activities.task%></td>
-			<td> <%= link_to "Delete", activities, data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></td>
+			<td> 
+				<%= link_to "Edit", edit_activity_path(activities)%>
+			</td>
+			<td> 
+				<%= link_to "Delete", activities, data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+          } %>
+			</td>
 		</tr>
 		</li>
 		<%end%>
 	</ol>
-	
-<%= form_for :Activity do |f| %>
-  Task: <%= f.text_field :task %><br />
-  <%= f.submit :Add%>
-<% end %>
+<!--for new todo item-->
+<%= link_to "New", new_activity_path%>
