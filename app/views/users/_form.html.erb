@@ -1,0 +1,7 @@
+<%=form_with model: users do |f| %>
+  <%= f.label :Name%>
+  <%= f.text_field :name %><br />
+  <%= f.label :Address%>
+  <%= f.text_field :address %><br />
+  <%= f.submit :'newuser'%>
+<% end %>
