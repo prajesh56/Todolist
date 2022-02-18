@@ -1,5 +1,8 @@
 <%=form_with model: activities do |f| %>
-  <%= f.label :task%>
+  <%= f.label :Task%>
   <%= f.text_field :task %><br />
+  <!--manually entering user id to create new task-->
+  <%= f.label :Userid%>
+  <%= f.text_field :user_id %><br />
   <%= f.submit :'newtask'%>
 <% end %>
